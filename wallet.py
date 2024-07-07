@@ -4,7 +4,6 @@ from utils import PublicKeyUtils
 
 for address_index in range(10):
     words = Mnemonic('english').generate()
-    # Derivation from BIP44 derivation path
     path = f"m/44'/637'/0'/0'/0'"
     pt = PublicKeyUtils(words, path)
     apt_account = Account.load_key(pt.private_key.hex())
